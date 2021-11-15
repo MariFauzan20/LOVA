@@ -1,11 +1,9 @@
-import React from "react";
-import { Dropdown, Row, Col, Container } from "react-bootstrap";
+import { Dropdown, Row, Col, Card, Container, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
 
-
-export default function List() {
+const Pencarian = () => {
   const [regions, setRegions] = useState([]);
-  const [province, setProvince] = useState("Provinsi");
+  const [province, setProvince] = useState("Aceh");
   const [lokasi, setLokasi] = useState([]);
 
   useEffect(() => {
@@ -17,7 +15,7 @@ export default function List() {
     getCharacters();
   }, []);
 
-    useEffect(() => {
+  useEffect(() => {
     async function getLokasi() {
       const response = await fetch(
         `https://api.vaksinasi.id/locations/${province}`
@@ -33,12 +31,12 @@ export default function List() {
   const provinceItemClick = (event) => {
     console.log(event.target.innerText);
     setProvince(event.target.innerText);
-    setLokasi([])
-  };
 
+    // setProvince()
+  };
   return (
     <Container>
-      <h4 className="mt-4">Cari Lokasi Vaksin</h4>
+      <h3 className="mt-4 "><b>Cari Lokasi Vaksin</b></h3>
       {/* <div className='d-flex my-4 gx-4'> */}
       <Row md={6} className=" d-flex ">
         <Col>
@@ -54,17 +52,31 @@ export default function List() {
                   {item.province}
                 </Dropdown.Item>
               ))}
-
-              {/* <Dropdown.Item href="#/action-1">Action</Dropdown.Item>
-              <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-              <Dropdown.Item href="#/action-3">Something else</Dropdown.Item> */}
             </Dropdown.Menu>
           </Dropdown>
         </Col>
       </Row>
+      {/* </div> */}
 
       <Row className=" mb-4 border-bottom" />
+      <Row xs={1} md={4} className="g-4 text-center">
+        {lokasi.map((item, idx) => (
+          <Col key={idx}>
 
+            <Card>
+              <Card.Body>
+                <Card.Title>{item.title}</Card.Title>
+                <Card.Text>{item.address}</Card.Text>
+                <Button variant="primary">Detail</Button>
+              </Card.Body>
+            </Card>
+          </Col>
+        ))}
+      </Row>
     </Container>
   );
-}
+  
+};
+
+export default Pencarian;
+// body.results.map(({ name }) => ({ label: name, value: name })));

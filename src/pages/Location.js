@@ -1,12 +1,14 @@
 import React from "react";
-import List from "../components/List";
-import Cards from "../components/Card";
+// import List from "../components/List";
+// import Cards from "../components/Card";
+import Pencarian from "../components/Pencarian";
 
 export default function Location() {
   return (
   <>
-  <List />,
-  <Cards />
+  <Pencarian />
+  {/* <List />,
+  <Cards  /> */}
   </>
   );
 }
