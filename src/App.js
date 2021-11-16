@@ -1,10 +1,21 @@
-// import Home from "./pages/Home";
+import React from "react";
+
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/HomePage";
+import About from "./pages/AboutPage";
 import Location from "./pages/LocationPage";
-// import List from "./components/List";
-// import About from "./pages/About";
 
 function App() {
-  return <Location />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="location" element={<Location />} />
+        <Route path="about" element={<About />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
 
 export default App;
