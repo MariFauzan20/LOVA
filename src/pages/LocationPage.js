@@ -2,13 +2,15 @@ import React from "react";
 // import List from "../components/List";
 // import Cards from "../components/Card";
 import Pencarian from "../components/Pencarian";
+import Header from "../components/Header";
+import Footer from "../components/Footer"
 
 export default function Location() {
   return (
   <>
-  <Pencarian />
-  {/* <List />,
-  <Cards  /> */}
+  <Header />,
+  <Pencarian />,
+  <Footer />
   </>
   );
 }

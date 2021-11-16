@@ -2,9 +2,9 @@ import React from "react";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Location from "./pages/Location";
+import Home from "./pages/HomePage";
+import About from "./pages/AboutPage";
+import Location from "./pages/LocationPage";
 
 function App() {
   return (

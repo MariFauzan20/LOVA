@@ -1,10 +1,7 @@
 import React from "react";
-
 import styled from "styled-components";
-
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-
 import ImageOne from "../assets/images/img-1.jpg";
 import ImageTwo from "../assets/images/img-2.jpg";
 import ImageThree from "../assets/images/img-3.jpg";

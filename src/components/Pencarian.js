@@ -1,5 +1,5 @@
-import { Dropdown, Row, Col, Card, Container, Button } from "react-bootstrap";
 import { useState, useEffect } from "react";
+import "../assets/css/pencarian.css";
 
 const Pencarian = () => {
   const [regions, setRegions] = useState([]);
@@ -26,7 +26,6 @@ const Pencarian = () => {
     getLokasi();
   }, [province]);
   console.log(lokasi);
-  
 
   const provinceItemClick = (event) => {
     console.log(event.target.innerText);
@@ -35,48 +34,69 @@ const Pencarian = () => {
     // setProvince()
   };
   return (
-    <Container>
-      <h3 className="mt-4 "><b>Cari Lokasi Vaksin</b></h3>
-      {/* <div className='d-flex my-4 gx-4'> */}
-      <Row md={6} className=" d-flex ">
-        <Col>
-          <Dropdown className="pt-4 m-4">
-            <h6 className="mb-4">Provinsi</h6>
-            <Dropdown.Toggle variant="secondary" id="dropdown-basic">
-              {province}
-            </Dropdown.Toggle>
+    <div className="container">
+      <div className="title">
+        <h2 className="my-4 mt-4 ">
+          <b>Cari Lokasi Vaksin</b>
+        </h2>
+        <h5 className="mb-3 prov">Provinsi</h5>
+      </div>
+      <div>
+        <div className="row">
+          <div className="col">
+            <div className="dropdown">
+              <button
+                className="btn btn-primary btndrop dropdown-toggle mb-4"
+                type="button"
+                id="dropdownMenuButton1"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                {province}
+              </button>
+              <ul
+                className="dropdown-menu"
+                aria-labelledby="dropdownMenuButton1"
+              >
+                {regions.map((item, index) => (
+                  <li>
+                    <a
+                      className="dropdown-item"
+                      key={index}
+                      onClick={provinceItemClick}
+                    >
+                      {item.province}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <Dropdown.Menu>
-              {regions.map((item, index) => (
-                <Dropdown.Item key={index} onClick={provinceItemClick}>
-                  {item.province}
-                </Dropdown.Item>
-              ))}
-            </Dropdown.Menu>
-          </Dropdown>
-        </Col>
-      </Row>
-      {/* </div> */}
+      <div className="row mb-2 border-bottom" />
 
-      <Row className=" mb-4 border-bottom" />
-      <Row xs={1} md={4} className="g-4 text-center">
-        {lokasi.map((item, idx) => (
-          <Col key={idx}>
-
-            <Card>
-              <Card.Body>
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Text>{item.address}</Card.Text>
-                <Button variant="primary">Detail</Button>
-              </Card.Body>
-            </Card>
-          </Col>
-        ))}
-      </Row>
-    </Container>
+      <div>
+        <div className="row text-center">
+          {lokasi.map((item, idx) => (
+            <div className="col" key={idx}>
+              <div className="card-group">
+                <div className="card">
+                  <h5 className="card-title">{item.title.toUpperCase()}</h5>
+                  <div className="row mt-2 border-bottom" />
+                  <h6 className="card-text my-2  mb-4">{item.address}</h6>
+                  <a href="#" class="btn btn-primary">
+                    Detail
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   );
-  
 };
 
 export default Pencarian;
-// body.results.map(({ name }) => ({ label: name, value: name })));
