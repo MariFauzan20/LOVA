@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable jsx-a11y/iframe-has-title */
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router";
