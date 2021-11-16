@@ -3,10 +3,9 @@ import React from 'react'
 export default function Vaksinasi() {
     return (
       <div>
-        <div className="bg-skyblue">
-          <div className="container">
-            <div className="d-flex justify-content-between ">
-              <div className="col-4">
+          <div className="container mb-5">
+            <div className="row">
+              <div className="col pe-sm-5">
                 <h4>Vaksinasi</h4>
                 <p>
                   Vaksinasi adalah pemberian Vaksin dalam rangka meningkatkan
@@ -16,7 +15,7 @@ export default function Vaksinasi() {
                   sumber penularan.
                 </p>
               </div>
-              <div className="ps-5">
+              <div className="ps-sm-5">
                 <h4>Bagaimana Cara Kerja Vaksin</h4>
                 <iframe
                   width="560"
@@ -31,6 +30,5 @@ export default function Vaksinasi() {
             </div>
           </div>
         </div>
-      </div>
     );
 }

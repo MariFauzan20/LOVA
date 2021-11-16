@@ -11,13 +11,13 @@ export default function Home() {
     <>
       <Header />
       <section>
-        <div className="hero-container">
+        <div className="container">
           <div className="p-5 mb-4 bg-light rounded-3">
             <div className="container-fluid py-5">
               <img
                 src={ImageFour}
                 height="300px"
-                className="rounded float-end"
+                className="rounded float-end d-none d-sm-inline"
                 alt=""
               ></img>
               <h1 className="display-5 fw-bold text-blue">LoVa</h1>
