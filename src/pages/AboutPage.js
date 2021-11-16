@@ -9,7 +9,7 @@ import ImageThree from "../assets/images/img-3.jpg";
 export default function About() {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Section>
         <Row>
           <Image src={ImageOne} alt="" />
@@ -39,7 +39,7 @@ export default function About() {
           </Description>
         </Row>
       </Section>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 }

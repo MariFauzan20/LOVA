@@ -1,5 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState, useEffect } from "react";
 import "../assets/css/pencarian.css";
+import { Link } from "react-router-dom";
 
 const Pencarian = () => {
   const [regions, setRegions] = useState([]);
@@ -86,9 +88,12 @@ const Pencarian = () => {
                   <h5 className="card-title">{item.title.toUpperCase()}</h5>
                   <div className="row mt-2 border-bottom" />
                   <h6 className="card-text my-2  mb-4">{item.address}</h6>
-                  <a href="#" class="btn btn-primary">
+                  <Link
+                    to={`/detail/${province}/${idx}`}
+                    class="btn btn-primary"
+                  >
                     Detail
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

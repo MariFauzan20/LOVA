@@ -3,118 +3,17 @@ import React from "react";
 // import Cards from "../components/Card";
 import Pencarian from "../components/Pencarian";
 import Header from "../components/Header";
-import Footer from "../components/Footer"
+import Footer from "../components/Footer";
 
 export default function Location() {
   return (
-  <>
-  <Header />,
-  <Pencarian />,
-  <Footer />
-  </>
+    <>
+      {/* <Header />, */}
+      <Pencarian />
+      {/* <Footer /> */}
+    </>
   );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import { Dropdown, Row, Col, Card, Container, Button } from "react-bootstrap";
 // import { useState, useEffect } from "react";
