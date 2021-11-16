@@ -10,8 +10,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <section>
-        <div className="container">
+        <div className="hero-container">
           <div className="p-5 mb-4 bg-light rounded-3">
             <div className="container-fluid py-5">
               <img
@@ -36,7 +35,6 @@ export default function Home() {
           </div>
         <Vaksinasi />
         <Footer />
-      </section>
     </>
   );
 }

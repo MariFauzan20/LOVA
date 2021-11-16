@@ -15,7 +15,7 @@ export default function Vaksinasi() {
                   sumber penularan.
                 </p>
               </div>
-              <div className="ps-sm-5">
+              <div className="col ps-sm-5">
                 <h4>Bagaimana Cara Kerja Vaksin</h4>
                 <iframe
                   width="560"
