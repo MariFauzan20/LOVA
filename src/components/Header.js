@@ -10,7 +10,7 @@ export default function Header() {
     <Navbar bg="primary" variant="dark">
       <Container>
         <Navbar.Brand href="/">LOVA</Navbar.Brand>
-        <Nav className="me-auto">
+        <Nav className="ms-auto">
           <Nav.Link as={Link} to="/">
             Home
           </Nav.Link>
