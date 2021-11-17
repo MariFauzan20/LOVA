@@ -1,0 +1,35 @@
+.card {
+  display: flex !important;
+  margin: 30px !important;
+  padding: 30px !important;
+  width: 300px !important;
+  height: 250px !important;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.19) !important;
+  border-radius: 1rem !important;
+  transition: transform 0.3s !important;
+}
+
+.card:hover {
+  transform: translateY(5px);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.19);
+}
+
+h6 {
+  color: #6b7280;
+}
+
+.prov {
+  color: #6b7280;
+}
+/* .dropdown{
+	background-color: tomato;
+} */
+
+.btndrop {
+  width: 225px;
+  height: 40px;
+}
+
+/* .dropown-menu:hover{
+	background-color: blue;
+} */
