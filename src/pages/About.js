@@ -5,40 +5,44 @@ import styled from "styled-components";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
-import ImageOne from "../assets/images/img-1.jpg";
-import ImageTwo from "../assets/images/img-2.jpg";
-import ImageThree from "../assets/images/img-3.jpg";
+import ImageOne from "../assets/images/img-1.png";
+import ImageTwo from "../assets/images/img-2.png";
+import ImageThree from "../assets/images/img-3.png";
 
 export default function About() {
   return (
     <>
       <Header />
       <Section>
+        <Title>ABOUT</Title>
         <Row>
           <Image src={ImageOne} alt="" />
           <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            et dignissim risus. Aliquam at dignissim diam, vitae convallis
-            dolor. Nam ligula eros, ullamcorper ut posuere sed, vulputate in
-            metus. Sed eget tellus lacus.
+            Vaksinasi adalah pemberian Vaksin dalam rangka menimbulkan atau
+            meningkatkan kekebalan seseorang secara aktif terhadap suatu
+            penyakit, sehingga apabila suatu saat terpajan dengan penyakit
+            tersebut tidak akan sakit atau hanya mengalami sakit ringan dan
+            tidak menjadi sumber penularan.
           </Description>
         </Row>
         <RowReverse>
           <Image src={ImageTwo} alt="" />
-          <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            et dignissim risus. Aliquam at dignissim diam, vitae convallis
-            dolor. Nam ligula eros, ullamcorper ut posuere sed, vulputate in
-            metus. Sed eget tellus lacus.
-          </Description>
+          <DescriptionReverse>
+            Pelayanan vaksinasi COVID-19 dilaksanakan di Fasilitas Pelayanan
+            Kesehatan milik Pemerintah Pusat, Pemerintah Daerah Provinsi,
+            Pemerintah Daerah Kabupaten/Kota atau milik masyarakat/swasta yang
+            memenuhi persyaratan
+          </DescriptionReverse>
         </RowReverse>
         <Row>
           <Image src={ImageThree} alt="" />
           <Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
-            et dignissim risus. Aliquam at dignissim diam, vitae convallis
-            dolor. Nam ligula eros, ullamcorper ut posuere sed, vulputate in
-            metus. Sed eget tellus lacus.
+            Upaya-upaya pengadaan vaksin ini dilakukan melalui perjanjian
+            bilateral dan perjanjian multilateral seperti COVAX Facility bersama
+            GAVI dan WHO, ataupun donasi yang diberikan oleh negara-negara
+            sahabat. Ada 6 jenis vaksin COVID-19 yang akan digunakan di
+            Indonesia, yakni Sinovac, AstraZeneca, Sinopharm, Moderna, Pfizer,
+            dan Novavax.
           </Description>
         </Row>
       </Section>
@@ -48,28 +52,34 @@ export default function About() {
 }
 
 const Section = styled.div`
-  margin: 20px;
+  margin: 50px 20px 50px 20px;
 `;
 
 const Row = styled.div`
   display: flex;
-  margin-bottom: 10px;
   align-items: center;
 `;
 
-const RowReverse = styled.div`
-  display: flex;
-  margin-bottom: 10px;
+const RowReverse = styled(Row)`
   flex-direction: row-reverse;
-  align-items: center;
 `;
 
 const Image = styled.img`
   width: 300px;
-  margin: 30px;
+  margin-left: 30px;
+  margin-right: 30px;
   border-radius: 20px;
 `;
 
 const Description = styled.p`
   width: 600px;
+`;
+
+const DescriptionReverse = styled(Description)`
+  text-align: end;
+`;
+
+const Title = styled.h1`
+  margin: auto;
+  width: 36px;
 `;

@@ -98,7 +98,7 @@ const FooterLink = styled(Link)`
   font-size: 14px;
 
   &:hover {
-    color: #01bf71;
+    color: #0d6efd;
     transition: 0.3s ease-out;
   }
 `;
