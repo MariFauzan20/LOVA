@@ -14,10 +14,10 @@ export default function Header() {
           <Nav.Link as={Link} to="/">
             Home
           </Nav.Link>
-          <Nav.Link as={Link} to="/Location">
+          <Nav.Link as={Link} to="/location">
             Location
           </Nav.Link>
-          <Nav.Link as={Link} to="/About">
+          <Nav.Link as={Link} to="/about">
             About
           </Nav.Link>
         </Nav>
