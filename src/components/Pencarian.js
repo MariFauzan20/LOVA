@@ -90,7 +90,7 @@ const Pencarian = () => {
                   <h6 className="card-text my-2  mb-4">{item.address}</h6>
                   <Link
                     to={`/detail/${province}/${idx}`}
-                    class="btn btn-primary"
+                    className="btn btn-primary"
                   >
                     Detail
                   </Link>
