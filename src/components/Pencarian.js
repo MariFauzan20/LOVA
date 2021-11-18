@@ -2,38 +2,41 @@
 import { useState, useEffect } from "react";
 import "../assets/css/pencarian.css";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import ImageFive from "../assets/images/loading.svg";
 
 const Pencarian = () => {
   const [regions, setRegions] = useState([]);
   const [province, setProvince] = useState("Aceh");
   const [lokasi, setLokasi] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    async function getCharacters() {
-      const response = await fetch("https://api.vaksinasi.id/regions");
-      const body = await response.json();
-      setRegions(body.data);
-    }
-    getCharacters();
+    axios
+      .get("https://api.vaksinasi.id/regions")
+      .then((response) =>{
+        setRegions(response.data.data)
+      })
   }, []);
 
   useEffect(() => {
-    async function getLokasi() {
-      const response = await fetch(
-        `https://api.vaksinasi.id/locations/${province}`
-      );
-      const body = await response.json();
-      setLokasi(body.data);
-    }
-    getLokasi();
+    axios
+      .get(`https://api.vaksinasi.id/locations/${province}`)
+      .then((response) => {
+        setLoading(false);
+        setLokasi(response.data.data);
+        setError("");
+      })
+      .catch((error) => {
+        setLoading(false);
+        setLokasi({});
+        setError("Something Wrong");
+      });
   }, [province]);
-  console.log(lokasi);
 
   const provinceItemClick = (event) => {
-    console.log(event.target.innerText);
     setProvince(event.target.innerText);
-
-    // setProvince()
   };
   return (
     <div className="container">
@@ -81,23 +84,34 @@ const Pencarian = () => {
 
       <div>
         <div className="row text-center">
-          {lokasi.map((item, idx) => (
-            <div className="col" key={idx}>
-              <div className="card-group">
-                <div className="card">
-                  <h5 className="card-title">{item.title.toUpperCase()}</h5>
-                  <div className="row mt-2 border-bottom" />
-                  <h6 className="card-text my-2  mb-4">{item.address}</h6>
-                  <Link
-                    to={`/detail/${province}/${idx}`}
-                    className="btn btn-primary"
-                  >
-                    Detail
-                  </Link>
+          {loading ? 
+          (
+            <img
+              src={ImageFive}
+              height="400px"
+              className="PicIF"
+              alt=""
+            />
+          ) : (
+            lokasi.map((item, idx) => (
+              <div className="col" key={idx}>
+                <div className="card-group">
+                  <div className="card">
+                    <h5 className="card-title">{item.title.toUpperCase()}</h5>
+                    <div className="row mt-2 border-bottom" />
+                    <h6 className="card-text my-2  mb-4">{item.address}</h6>
+                    <Link
+                      to={`/detail/${province}/${idx}`}
+                      className="btn btn-primary"
+                    >
+                      Detail
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))
+          )}
+          {error ? error : null}
         </div>
       </div>
     </div>
@@ -105,3 +119,4 @@ const Pencarian = () => {
 };
 
 export default Pencarian;
+

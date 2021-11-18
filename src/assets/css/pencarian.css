@@ -21,15 +21,13 @@ h6 {
 .prov {
   color: #6b7280;
 }
-/* .dropdown{
-	background-color: tomato;
-} */
 
 .btndrop {
   width: 225px;
   height: 40px;
 }
 
-/* .dropown-menu:hover{
-	background-color: blue;
-} */
+.PicIF{
+margin: 30px;
+padding: 30px;
+}

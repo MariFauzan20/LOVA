@@ -6,7 +6,6 @@ import { useParams } from "react-router";
 
 export default function DetailLokasi() {
   let { id, regions } = useParams();
-
   let [lokasi, setLokasi] = useState([]);
   let [age, setAge] = useState([]);
 
